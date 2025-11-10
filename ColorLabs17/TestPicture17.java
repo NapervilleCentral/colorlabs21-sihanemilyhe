@@ -20,9 +20,9 @@ public class TestPicture17
   {
       //opens picture using a dialog box
       /**/
-     String fileName = FileChooser.pickAFile();
-     Picture pictObj = new Picture(fileName);
-     pictObj.explore();
+     //String fileName = FileChooser.pickAFile();
+     //Picture pictObj = new Picture(fileName);
+     //pictObj.explore();
 
      //opens a pictue using a path
      //Picture apic = new Picture("C:\\Users\\khayes\\Favorites\\Documents\APCS- Java\chap03\Curriclum 2013\Picture Color labs\images\\beach.jpg");
@@ -32,20 +32,43 @@ public class TestPicture17
      Picture ferris1 = new Picture("images/2000 ferris wheel2.jpg");
      Picture ferris2 = new Picture("images/2000 ferris wheel2.jpg");
      Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
-
+     Picture pic = new Picture("images\\swan.jpg");
      //apic.explore();
-     ferris1.explore();
+     pic.explore();
      
      //makes an array of pixels
      Pixel[] pixels;
      //gets pixels from picture and assigns to pixels array
-     pixels = ferris1.getPixels();
+     pixels = pic.getPixels();
+     
+     Pixel spot1 = pic.getPixel(100,100);
+     Pixel spot2 = pic.getPixel(433,283);
+     Pixel ferr17 = pixels[17];
+     ferr17.setRed(240);
+     ferr17.setGreen(160);
+     ferr17.setBlue(200);
+     //spot2.setColor(Color.blue);
+     int red,green,blue;
+     for (Pixel spot: pixels) {
+         red = spot.getRed();
+         red = (int)(red*0.5);
+         spot.setRed(red);
+        }
+     pic.explore();
+     for (Pixel spot:pixels){
+         red = spot.getRed();
+         red = (int)(red*0.5);
+         spot.setRed(red);
+     }
+
+         
+     }
     
      //how many pixels or how large array
-    System.out.println("This is a large array"+pixels.length  );
+    //System.out.println("This is a large array"+pixels.length  );
 
 
-    /**/
+    /*
         //access each index
     System.out.println(pixels[17]);
     //access each pixel
@@ -114,8 +137,8 @@ final double  FACTOR = .5;
 
   /**/ 
     //write/save a picture as a file
-    ferris1.write("images/ferris11.jpg");
+    //ferris1.write("images/ferris11.jpg");
 
     /**/
   }//main
-}//class
+//class
