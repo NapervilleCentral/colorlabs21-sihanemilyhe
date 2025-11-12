@@ -26,20 +26,40 @@ public class TestPicture17
 
      //opens a pictue using a path
      //Picture apic = new Picture("C:\\Users\\khayes\\Favorites\\Documents\APCS- Java\chap03\Curriclum 2013\Picture Color labs\images\\beach.jpg");
-     
+     //make a copy of pic and rename pic
      //relative path
      Picture apic = new Picture("images\\beach.jpg");
      Picture ferris1 = new Picture("images/2000 ferris wheel2.jpg");
      Picture ferris2 = new Picture("images/2000 ferris wheel2.jpg");
      Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
      Picture pic = new Picture("images\\swan.jpg");
+     Picture pic2 = new Picture("images\\swan.jpg");
+     Picture pic3 = new Picture("images\\swan.jpg");
+     Picture pic4 = new Picture("images\\swan.jpg");
+     Picture pic5 = new Picture("images\\swan.jpg");
+     Picture pic6 = new Picture("images\\swan.jpg");
      //apic.explore();
      pic.explore();
      
      //makes an array of pixels
      Pixel[] pixels;
+     Pixel[] pixels2;
+     Pixel[] pixels3;
+     Pixel[] pixels4;
+     Pixel[] pixels5;
+     Pixel[] pixels6;
      //gets pixels from picture and assigns to pixels array
      pixels = pic.getPixels();
+     pixels2 = pic2.getPixels();
+     pixels3 = pic3.getPixels();
+     pixels4 = pic4.getPixels();
+     pixels5 = pic5.getPixels();
+     pixels6 = pic6.getPixels();
+
+     
+     
+     
+
      
      Pixel spot1 = pic.getPixel(100,100);
      Pixel spot2 = pic.getPixel(433,283);
@@ -49,20 +69,90 @@ public class TestPicture17
      ferr17.setBlue(200);
      //spot2.setColor(Color.blue);
      int red,green,blue;
-     for (Pixel spot: pixels) {
+     pic.explore();
+     for (Pixel spot: pic3.getPixels()) {
          red = spot.getRed();
          red = (int)(red*0.5);
          spot.setRed(red);
         }
-     pic.explore();
-     for (Pixel spot:pixels){
+     pic3.explore();
+     for (Pixel spot:pic.getPixels()){
+         blue = spot.getBlue();
+         blue = (255-blue);
+         spot.setBlue(blue);
+         green = spot.getGreen();
+         green = (255-green);
+         spot.setGreen(green);
          red = spot.getRed();
-         red = (int)(red*0.5);
+         red = (255-red);
          spot.setRed(red);
-     }
-
          
+    
      }
+     pic.explore();
+    
+     for (Pixel spot:pic2.getPixels()){
+         blue = spot.getBlue();
+         green = spot.getGreen();
+         red = spot.getRed();
+         int grey = (blue+red+green)/3;
+         blue = (grey);
+         spot.setBlue(blue);
+         green = (grey);
+         spot.setGreen(green);
+         red = (grey);
+         spot.setRed(red);
+         }
+     pic2.explore();
+     
+     for (Pixel spot:pic4.getPixels()){
+         blue = spot.getBlue();
+         blue = (blue-80);
+         spot.setBlue(blue);
+         green = spot.getGreen();
+         green = (green-80);
+         spot.setGreen(green);
+         red = spot.getRed();
+         red = (red-80);
+         spot.setRed(red);
+         
+    
+     }
+     pic4.explore();
+     
+     for (Pixel spot:pic5.getPixels()){
+         blue = spot.getBlue();
+         blue = (blue+90);
+         spot.setBlue(blue);
+         green = spot.getGreen();
+         green = (green+90);
+         spot.setGreen(green);
+         red = spot.getRed();
+         red = (red+90);
+         spot.setRed(red);
+         
+    
+     }
+     pic5.explore();
+     
+     for (Pixel spot:pic6.getPixels()){
+         blue = spot.getBlue();
+         red = spot.getRed();
+         green = spot.getGreen();
+         if (red<=140&&red>=0) {
+            if (blue<=70&&blue>=0) {
+                if (green<=70&&green>=0) {
+            spot.setBlue((int)(blue*2.5));
+         }
+         }
+         }
+         
+         
+    
+     }
+     pic6.explore();
+         
+    }
     
      //how many pixels or how large array
     //System.out.println("This is a large array"+pixels.length  );
@@ -139,6 +229,7 @@ final double  FACTOR = .5;
     //write/save a picture as a file
     //ferris1.write("images/ferris11.jpg");
 
-    /**/
-  }//main
+    
+
+}//main
 //class
