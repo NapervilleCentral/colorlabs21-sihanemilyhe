@@ -37,12 +37,14 @@ public class SheparFaireyLab
          pixels2 = me2.getPixels();
          pixels3 = me3.getPixels();
          int red,green,blue,avg;
+         me.explore();
          
          /**
           * method 1 change
           * 
           * 
           */
+        int i = 0;
          for (Pixel spot:pixels){
          blue = spot.getBlue();
          green = spot.getGreen();
@@ -55,11 +57,47 @@ public class SheparFaireyLab
          red = (avg);
          spot.setRed(red);
          if (red<=63&&red>=0&&blue<=63&&blue>=0&&green<=63&&green>=0) {
-             green=70;
-             blue=91;
-             red=41;
-             
-            
+             spot.setColor(new Color(41, 70, 91));
+            }
+         if (red<=126&&red>63&&blue<=126&&blue>63&&green<=126&&green>63) {
+             spot.setColor(new Color(100, 50, 50));
+            }
+         if (red<=189&&red>126&&blue<=189&&blue>126&&green<=189&&green>126) {
+             spot.setColor(new Color (183, 201, 226));
+            }
+         if (red<=255&&red>189&&blue<=255&&blue>189&&green<=255&&green>189) {
+             spot.setColor(new Color (250, 249, 246));
+            }
+        }
+        me.explore();
+        int min = pixels[i].getRed();
+        int max=min;
+        for (Pixel spot:pixels){
+         
+         if (pixels[i].getRed()>=max){
+             max=pixels[i].getRed();
+         }
+         if (pixels[i].getRed()<=min){
+             min=pixels[i].getRed();
+         }
+         i++;
+        }
+        int split=(max-min)/4;
+         for (Pixel spot:pixels){
+         blue = spot.getBlue();
+         green = spot.getGreen();
+         red = spot.getRed();
+         if (red<=split&&red>=0&&blue<=split&&blue>=0&&green<=split&&green>=0) {
+             spot.setColor(new Color(41, 70, 91));
+            }
+         if (red<=split*2&&red>split&&blue<=split*2&&blue>split&&green<=split*2&&green>split) {
+             spot.setColor(new Color(100, 50, 50));
+            }
+         if (red<=split*3&&red>split*2&&blue<=split*3&&blue>split*2&&green<=split*3&&green>split*2) {
+             spot.setColor(new Color (183, 201, 226));
+            }
+         if (red<=split*4&&red>split*3&&blue<=split*4&&blue>split*3&&green<=split*4&&green>split*3) {
+             spot.setColor(new Color (250, 249, 246));
             }
         }
         me.explore();
