@@ -133,7 +133,7 @@ public class SheparFaireyLab
             }
         }
         me2.explore();
-        me2.write("images/SFtry1.picture.jpg");
+        me2.write("images/SFtry1.jpg");
         
         for (Pixel spot:pixels3){
          blue = spot.getBlue();
