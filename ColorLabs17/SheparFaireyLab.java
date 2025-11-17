@@ -25,11 +25,11 @@ public class SheparFaireyLab
          //pictObj.explore();
          
          //relative path
-         Picture apic = new Picture("images\\beach.jpg");
+         //Picture apic = new Picture("images\\picofme.jpg");
          //change with selfie picture
-         Picture me = new Picture("images/beach.jpg");
-         Picture me2 = new Picture("images/beach.jpg");
-         Picture me3 = new Picture("images/beach.jpg");
+         Picture me = new Picture("images/picofme.jpeg");
+         Picture me2 = new Picture("images/picofme.jpeg");
+         Picture me3 = new Picture("images/picofme.jpeg");
          Pixel[] pixels;
          Pixel[] pixels2;
          Pixel[] pixels3;
@@ -101,7 +101,110 @@ public class SheparFaireyLab
             }
         }
         me.explore();
-          //(41, 70, 91)
+        /*
+         for (Pixel spot:pixels){
+         blue = spot.getBlue();
+         green = spot.getGreen();
+         red = spot.getRed();
+         avg = (blue+red+green)/3;
+         blue = (avg);
+         spot.setBlue(blue);
+         green = (avg);
+         spot.setGreen(green);
+         red = (avg);
+         spot.setRed(red);
+         if (red<=63&&red>=0&&blue<=63&&blue>=0&&green<=63&&green>=0) {
+             spot.setColor(new Color(102, 28, 28));
+            }
+         if (red<=126&&red>63&&blue<=126&&blue>63&&green<=126&&green>63) {
+             spot.setColor(new Color(174, 78, 78));
+            }
+         if (red<=189&&red>126&&blue<=189&&blue>126&&green<=189&&green>126) {
+             spot.setColor(new Color (229, 178, 178));
+            }
+         if (red<=255&&red>189&&blue<=255&&blue>189&&green<=255&&green>189) {
+             spot.setColor(new Color (242,211,211));
+            }
+        }
+        me.explore();
+        /*
+        for (Pixel spot:pixels){
+         blue = spot.getBlue();
+         green = spot.getGreen();
+         red = spot.getRed();
+         avg = (blue+red+green)/3;
+         blue = (avg);
+         spot.setBlue(blue);
+         green = (avg);
+         spot.setGreen(green);
+         red = (avg);
+         spot.setRed(red);
+         if (red<=63&&red>=0&&blue<=63&&blue>=0&&green<=63&&green>=0) {
+             spot.setColor(new Color(106,127,175));
+            }
+         if (red<=126&&red>63&&blue<=126&&blue>63&&green<=126&&green>63) {
+             spot.setColor(new Color(199,182,255));
+            }
+         if (red<=189&&red>126&&blue<=189&&blue>126&&green<=189&&green>126) {
+             spot.setColor(new Color 	(245,211,232));
+            }
+         if (red<=255&&red>189&&blue<=255&&blue>189&&green<=255&&green>189) {
+             spot.setColor(new Color (248,247,255));
+            }
+        }
+        me.explore();
+        /*
+        for (Pixel spot:pixels){
+         blue = spot.getBlue();
+         green = spot.getGreen();
+         red = spot.getRed();
+         avg = (blue+red+green)/3;
+         blue = (avg);
+         spot.setBlue(blue);
+         green = (avg);
+         spot.setGreen(green);
+         red = (avg);
+         spot.setRed(red);
+         if (red<=63&&red>=0&&blue<=63&&blue>=0&&green<=63&&green>=0) {
+             spot.setColor(new Color(26,34,64));
+            }
+         if (red<=126&&red>63&&blue<=126&&blue>63&&green<=126&&green>63) {
+             spot.setColor(new Color	(174,224,215));
+            }
+         if (red<=189&&red>126&&blue<=189&&blue>126&&green<=189&&green>126) {
+             spot.setColor(new Color 	(86,59,127));
+            }
+         if (red<=255&&red>189&&blue<=255&&blue>189&&green<=255&&green>189) {
+             spot.setColor(new Color (248,226,154));
+            }
+        }
+        me.explore();
+        /**/
+        for (Pixel spot:pixels){
+         blue = spot.getBlue();
+         green = spot.getGreen();
+         red = spot.getRed();
+         avg = (blue+red+green)/3;
+         blue = (avg);
+         spot.setBlue(blue);
+         green = (avg);
+         spot.setGreen(green);
+         red = (avg);
+         spot.setRed(red);
+         if (red<=63&&red>=0&&blue<=63&&blue>=0&&green<=63&&green>=0) {
+             spot.setColor(new Color(26,34,64));
+            }
+         if (red<=126&&red>63&&blue<=126&&blue>63&&green<=126&&green>63) {
+             spot.setColor(new Color	(86,59,127));
+            }
+         if (red<=189&&red>126&&blue<=189&&blue>126&&green<=189&&green>126) {
+             spot.setColor(new Color 	(174,224,215));
+            }
+         if (red<=255&&red>189&&blue<=255&&blue>189&&green<=255&&green>189) {
+             spot.setColor(new Color (248,226,154));
+            }
+        }
+        me.explore();
          /**
           * method 2 change
           * 
