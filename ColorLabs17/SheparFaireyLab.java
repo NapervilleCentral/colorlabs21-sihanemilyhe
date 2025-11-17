@@ -107,7 +107,7 @@ public class SheparFaireyLab
             }
         }
         me.explore();
-        /*
+        
          for (Pixel spot:pixels2){
          blue = spot.getBlue();
          green = spot.getGreen();
@@ -133,7 +133,8 @@ public class SheparFaireyLab
             }
         }
         me2.explore();
-        /*
+        me2.write("images/SFtry1.picture.jpg");
+        
         for (Pixel spot:pixels3){
          blue = spot.getBlue();
          green = spot.getGreen();
@@ -152,14 +153,15 @@ public class SheparFaireyLab
              spot.setColor(new Color(199,182,255));
             }
          if (red<=189&&red>126&&blue<=189&&blue>126&&green<=189&&green>126) {
-             spot.setColor(new Color 	(245,211,232));
+             spot.setColor(new Color     (245,211,232));
             }
          if (red<=255&&red>189&&blue<=255&&blue>189&&green<=255&&green>189) {
              spot.setColor(new Color (248,247,255));
             }
         }
         me3.explore();
-        /*
+        me3.write("images/SFtry2.jpg");
+        
         for (Pixel spot:pixels4){
          blue = spot.getBlue();
          green = spot.getGreen();
@@ -175,16 +177,17 @@ public class SheparFaireyLab
              spot.setColor(new Color(26,34,64));
             }
          if (red<=126&&red>63&&blue<=126&&blue>63&&green<=126&&green>63) {
-             spot.setColor(new Color	(174,224,215));
+             spot.setColor(new Color    (174,224,215));
             }
          if (red<=189&&red>126&&blue<=189&&blue>126&&green<=189&&green>126) {
-             spot.setColor(new Color 	(86,59,127));
+             spot.setColor(new Color     (86,59,127));
             }
          if (red<=255&&red>189&&blue<=255&&blue>189&&green<=255&&green>189) {
              spot.setColor(new Color (248,226,154));
             }
         }
         me4.explore();
+        me4.write("images/SFtry3.jpg");
         /**/
         for (Pixel spot:pixels5){
          blue = spot.getBlue();
@@ -211,6 +214,7 @@ public class SheparFaireyLab
             }
         }
         me5.explore();
+        me5.write("images/SFmyFinal.jpg");
          /**
           * method 2 change
           * 
