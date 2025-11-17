@@ -30,12 +30,18 @@ public class SheparFaireyLab
          Picture me = new Picture("images/picofme.jpeg");
          Picture me2 = new Picture("images/picofme.jpeg");
          Picture me3 = new Picture("images/picofme.jpeg");
+         Picture me4 = new Picture("images/picofme.jpeg");
+         Picture me5 = new Picture("images/picofme.jpeg");
          Pixel[] pixels;
          Pixel[] pixels2;
          Pixel[] pixels3;
+         Pixel[] pixels4;
+         Pixel[] pixels5;
          pixels = me.getPixels();
          pixels2 = me2.getPixels();
          pixels3 = me3.getPixels();
+         pixels4 = me4.getPixels();
+         pixels5 = me5.getPixels();
          int red,green,blue,avg;
          me.explore();
          
@@ -83,7 +89,7 @@ public class SheparFaireyLab
          i++;
         }
         int split=(max-min)/4;
-         for (Pixel spot:pixels){
+         for (Pixel spot:pixels3){
          blue = spot.getBlue();
          green = spot.getGreen();
          red = spot.getRed();
@@ -102,7 +108,7 @@ public class SheparFaireyLab
         }
         me.explore();
         /*
-         for (Pixel spot:pixels){
+         for (Pixel spot:pixels2){
          blue = spot.getBlue();
          green = spot.getGreen();
          red = spot.getRed();
@@ -126,9 +132,9 @@ public class SheparFaireyLab
              spot.setColor(new Color (242,211,211));
             }
         }
-        me.explore();
+        me2.explore();
         /*
-        for (Pixel spot:pixels){
+        for (Pixel spot:pixels3){
          blue = spot.getBlue();
          green = spot.getGreen();
          red = spot.getRed();
@@ -152,9 +158,9 @@ public class SheparFaireyLab
              spot.setColor(new Color (248,247,255));
             }
         }
-        me.explore();
+        me3.explore();
         /*
-        for (Pixel spot:pixels){
+        for (Pixel spot:pixels4){
          blue = spot.getBlue();
          green = spot.getGreen();
          red = spot.getRed();
@@ -178,9 +184,9 @@ public class SheparFaireyLab
              spot.setColor(new Color (248,226,154));
             }
         }
-        me.explore();
+        me4.explore();
         /**/
-        for (Pixel spot:pixels){
+        for (Pixel spot:pixels5){
          blue = spot.getBlue();
          green = spot.getGreen();
          red = spot.getRed();
@@ -195,16 +201,16 @@ public class SheparFaireyLab
              spot.setColor(new Color(26,34,64));
             }
          if (red<=126&&red>63&&blue<=126&&blue>63&&green<=126&&green>63) {
-             spot.setColor(new Color	(86,59,127));
+             spot.setColor(new Color(86,59,127));
             }
          if (red<=189&&red>126&&blue<=189&&blue>126&&green<=189&&green>126) {
-             spot.setColor(new Color 	(174,224,215));
+             spot.setColor(new Color (174,224,215));
             }
          if (red<=255&&red>189&&blue<=255&&blue>189&&green<=255&&green>189) {
              spot.setColor(new Color (248,226,154));
             }
         }
-        me.explore();
+        me5.explore();
          /**
           * method 2 change
           * 
