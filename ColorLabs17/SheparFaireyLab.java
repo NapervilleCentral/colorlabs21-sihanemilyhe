@@ -76,6 +76,7 @@ public class SheparFaireyLab
             }
         }
         me.explore();
+        me.write("images/method1.jpg");
         int min = pixels[i].getRed();
         int max=min;
         for (Pixel spot:pixels){
@@ -107,7 +108,7 @@ public class SheparFaireyLab
             }
         }
         me.explore();
-        
+        me.write("images/method2.jpg");
          for (Pixel spot:pixels2){
          blue = spot.getBlue();
          green = spot.getGreen();
