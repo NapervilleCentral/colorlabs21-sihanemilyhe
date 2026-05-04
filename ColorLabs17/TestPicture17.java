@@ -11,7 +11,8 @@ import java.util.*;
 import java.util.List; // resolves problem with java.awt.List and java.util.List
 public class TestPicture17
 {
-
+     //Picture pic = new Picture("images\\beach.jpg");
+     //Picture acanvas = new Picture("images\\Canvas.jpg");
     /**
      * main method, to test the picture
      *
@@ -28,19 +29,19 @@ public class TestPicture17
      //Picture apic = new Picture("C:\\Users\\khayes\\Favorites\\Documents\APCS- Java\chap03\Curriclum 2013\Picture Color labs\images\\beach.jpg");
      //make a copy of pic and rename pic
      //relative path
-     Picture apic = new Picture("images\\beach.jpg");
-     Picture ferris1 = new Picture("images/2000 ferris wheel2.jpg");
-     Picture ferris2 = new Picture("images/2000 ferris wheel2.jpg");
-     Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
-     Picture pic = new Picture("images\\swan.jpg");
-     Picture pic2 = new Picture("images\\swan.jpg");
-     Picture pic3 = new Picture("images\\swan.jpg");
-     Picture pic4 = new Picture("images\\swan.jpg");
-     Picture pic5 = new Picture("images\\swan.jpg");
-     Picture pic6 = new Picture("images\\swan.jpg");
-     //apic.explore();
-     pic.explore();
      
+     Picture pic = new Picture("images\\beach.jpg");
+     Picture acanvas = new Picture("images\\Canvas.jpg");
+     Picture temple = new Picture("images\\temple.jpg");
+
+     //apic.explore();
+     mirrorVertical(pic);
+     pic.explore();
+     copytoCanvas(pic, acanvas);
+     acanvas.explore();
+     mirrorVertical2(temple);
+     temple.explore();
+     /*
      //makes an array of pixels
      Pixel[] pixels;
      Pixel[] pixels2;
@@ -226,10 +227,89 @@ final double  FACTOR = .5;
     ferris2.explore();
 
   /**/ 
+  /**/
     //write/save a picture as a file
     //ferris1.write("images/ferris11.jpg");
 
     
 
 }//main
+
+
+
+/**
+ * Method to mirror on a vertical line in the middle
+ * of the picture based on the width
+ */
+
+public static void mirrorVertical(Picture source){
+    int width = source.getWidth();
+    int mirrorPoint = width/2;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    
+    // loop thru all the rows
+    for (int y = 0; y<source.getHeight(); y++){
+        //loop from 0 to the middle(mirror Point)
+        for (int x = 0; x<mirrorPoint; x++){
+            leftPixel = source.getPixel(x,y);
+            rightPixel = source.getPixel(width -1 -x,y);
+            rightPixel.setColor(leftPixel.getColor());
+        }
+    }
+    
+    
+    
+}//mirrorVertical
+
+/**
+ * copy one pic to another pic/canvas
+ * add two ints to params place you want pic on the target
+ */
+public static void copytoCanvas(Picture source, Picture target){
+    Pixel sourcePix = null;
+    Pixel targetPix = null;
+    
+    //loop thru jcolumns (targetX is the starting point on the Canvas)
+    for (int sourceX = 0,targetX = 0; sourceX < source.getWidth();sourceX++,targetX++){
+        for (int sourceY = 0,targetY = 0; sourceY < source.getHeight();sourceY++,targetY++){
+            sourcePix = source.getPixel(sourceX, sourceY);
+            targetPix = target.getPixel(targetX, targetY);
+            targetPix.setColor(sourcePix.getColor());
+        }
+    }
+}
+
+
+public static void mirrorVertical2(Picture source){
+    int width = source.getWidth();
+    int mirrorPoint = width/2;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    
+    // loop thru all the rows
+    for (int y = 0; y<(source.getHeight()/4); y++){
+        //loop from 0 to the middle(mirror Point)
+        for (int x = 0; x<mirrorPoint; x++){
+            leftPixel = source.getPixel(x,y);
+            rightPixel = source.getPixel(width -1 -x,y);
+            rightPixel.setColor(leftPixel.getColor());
+        }
+    }
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 //class
+}
