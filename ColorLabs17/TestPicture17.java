@@ -30,7 +30,7 @@ public class TestPicture17
      //make a copy of pic and rename pic
      //relative path
      
-     Picture pic = new Picture("images\\beach.jpg");
+     Picture pic = new Picture("images\\newpic.jpg");
      Picture acanvas = new Picture("images\\Canvas.jpg");
      Picture temple = new Picture("images\\temple.jpg");
 
@@ -39,8 +39,11 @@ public class TestPicture17
      pic.explore();
      copytoCanvas(pic, acanvas);
      acanvas.explore();
-     mirrorVertical2(temple);
-     temple.explore();
+     //mirrorVertical2(temple);
+     //temple.explore();
+     Pixel[] pixels;
+     pixels = pic.getPixels();
+     
      /*
      //makes an array of pixels
      Pixel[] pixels;
@@ -270,8 +273,11 @@ public static void copytoCanvas(Picture source, Picture target){
     Pixel sourcePix = null;
     Pixel targetPix = null;
     
-    //loop thru jcolumns (targetX is the starting point on the Canvas)
+    //loop thru jcolumns (targetX is the starting point on the Canvas) sourceX+=2 - smaller copy every other pixel
+                    //                                                  sourceX +=.5 - larger, copy every pixel twice cast as int in the getPixel & setColor
     for (int sourceX = 0,targetX = 0; sourceX < source.getWidth();sourceX++,targetX++){
+        //loop thru the rows                                sourceY+=2 - smaller
+        //                                                  sourceX +=.5 - larger, copy every pixel twice 
         for (int sourceY = 0,targetY = 0; sourceY < source.getHeight();sourceY++,targetY++){
             sourcePix = source.getPixel(sourceX, sourceY);
             targetPix = target.getPixel(targetX, targetY);
