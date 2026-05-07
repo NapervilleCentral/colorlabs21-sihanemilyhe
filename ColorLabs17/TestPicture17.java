@@ -31,18 +31,57 @@ public class TestPicture17
      //relative path
      
      Picture pic = new Picture("images\\newpic.jpg");
+     Picture pic2 = new Picture("images\\newpic.jpg");
+     Picture pic3 = new Picture("images\\newpic.jpg");
+     Picture pic4 = new Picture("images\\newpic.jpg");
      Picture acanvas = new Picture("images\\Canvas.jpg");
-     Picture temple = new Picture("images\\temple.jpg");
-
+    int red,green,blue;
      //apic.explore();
-     mirrorVertical(pic);
-     pic.explore();
-     copytoCanvas(pic, acanvas);
-     acanvas.explore();
+     Pixel[] pixels3;
+     pixels3 = pic.getPixels();
+     for (Pixel spot:pic.getPixels()){
+         blue = spot.getBlue();
+         blue = (255-blue);
+         spot.setBlue(blue);
+         green = spot.getGreen();
+         green = (255-green);
+         spot.setGreen(green);
+         red = spot.getRed();
+         red = (255-red);
+         spot.setRed(red);
+         
+    
+     }
+     copytoCanvas(pic,acanvas,0,0);
+     mirrorVertical(pic2);
+     copytoCanvas(pic2, acanvas,1280,0);
+     
      //mirrorVertical2(temple);
      //temple.explore();
      Pixel[] pixels;
-     pixels = pic.getPixels();
+     pixels = pic3.getPixels();
+     for (Pixel spot: pic3.getPixels()) {
+         red = spot.getRed();
+         red = (int)(red*0.5);
+         spot.setRed(red);
+        }
+     copytoCanvas(pic3,acanvas,0,720);
+     Pixel[] pixels2;
+     pixels2 = pic4.getPixels();
+    for (Pixel spot:pic4.getPixels()){
+         blue = spot.getBlue();
+         red = spot.getRed();
+         green = spot.getGreen();
+         if (red<=140&&red>=0) {
+            if (blue<=70&&blue>=0) {
+                if (green<=70&&green>=0) {
+            spot.setBlue((int)(blue*2.5));
+         }
+         }
+    }
+    }
+     big(pic4, acanvas,1280,720);
+     acanvas.explore();
      
      /*
      //makes an array of pixels
@@ -265,20 +304,34 @@ public static void mirrorVertical(Picture source){
     
 }//mirrorVertical
 
+public static void big(Picture source, Picture target, int num1, int num2){
+    Pixel sourcePix = null;
+    Pixel targetPix = null;
+    for (double sourceX = 0,targetX = num1; sourceX < source.getWidth()/2;sourceX+=0.5,targetX++){
+        //loop thru the rows                                sourceY+=2 - smaller
+        //                                                  sourceX +=.5 - larger, copy every pixel twice 
+        for (double sourceY = 0,targetY = num2; sourceY < source.getHeight()/2;sourceY+=0.5,targetY++){
+            sourcePix = source.getPixel((int)sourceX, (int)sourceY);
+            targetPix = target.getPixel((int)targetX, (int)targetY);
+            targetPix.setColor(sourcePix.getColor());
+        }
+    }
+}
+
 /**
  * copy one pic to another pic/canvas
  * add two ints to params place you want pic on the target
  */
-public static void copytoCanvas(Picture source, Picture target){
+public static void copytoCanvas(Picture source, Picture target, int num1, int num2){
     Pixel sourcePix = null;
     Pixel targetPix = null;
     
     //loop thru jcolumns (targetX is the starting point on the Canvas) sourceX+=2 - smaller copy every other pixel
                     //                                                  sourceX +=.5 - larger, copy every pixel twice cast as int in the getPixel & setColor
-    for (int sourceX = 0,targetX = 0; sourceX < source.getWidth();sourceX++,targetX++){
+    for (int sourceX = 0,targetX = num1; sourceX < source.getWidth();sourceX++,targetX++){
         //loop thru the rows                                sourceY+=2 - smaller
         //                                                  sourceX +=.5 - larger, copy every pixel twice 
-        for (int sourceY = 0,targetY = 0; sourceY < source.getHeight();sourceY++,targetY++){
+        for (int sourceY = 0,targetY = num2; sourceY < source.getHeight();sourceY++,targetY++){
             sourcePix = source.getPixel(sourceX, sourceY);
             targetPix = target.getPixel(targetX, targetY);
             targetPix.setColor(sourcePix.getColor());
