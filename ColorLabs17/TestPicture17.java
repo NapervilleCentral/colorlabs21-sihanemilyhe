@@ -34,6 +34,7 @@ public class TestPicture17
      Picture pic2 = new Picture("images\\newpic.jpg");
      Picture pic3 = new Picture("images\\newpic.jpg");
      Picture pic4 = new Picture("images\\newpic.jpg");
+     Picture pic5 = new Picture("images\\newpic.jpg");
      Picture acanvas = new Picture("images\\Canvas.jpg");
     int red,green,blue;
      //apic.explore();
@@ -55,6 +56,8 @@ public class TestPicture17
      copytoCanvas(pic,acanvas,0,0);
      mirrorVertical(pic2);
      copytoCanvas(pic2, acanvas,1280,0);
+     flip(pic5);
+     copytoCanvas(pic5, acanvas, 2560,0);
      
      //mirrorVertical2(temple);
      //temple.explore();
@@ -303,6 +306,27 @@ public static void mirrorVertical(Picture source){
     
     
 }//mirrorVertical
+
+
+public static void flip(Picture source){
+    int height = source.getHeight();
+    int mirrorPoint = height;
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
+    
+    // loop thru all the rows
+    for (int x = 0; x<source.getWidth(); x++){
+        //loop from 0 to the middle(mirror Point)
+        for (int y = 0; y<mirrorPoint; y++){
+            topPixel = source.getPixel(x,y);
+            bottomPixel = source.getPixel(x,height-1-y);
+            topPixel.setColor(bottomPixel.getColor());
+        }
+    }
+    
+    
+    
+}
 
 public static void big(Picture source, Picture target, int num1, int num2){
     Pixel sourcePix = null;
