@@ -79,10 +79,12 @@ public class TestPicture17
     }
    
      big(pic4, acanvas,1280,720);
-     shrink(pic6,pic6,1275,715);
+     shrink(pic6,pic6,1280,720);
+     copytoCanvas(pic6, acanvas, 2560,720);
 
-     pic6.explore();
+     //pic6.explore();
      acanvas.explore();
+     acanvas.write("images\\finalcollage.jpg");
     
 
 }//main
@@ -147,10 +149,10 @@ public static void copytoCanvas(Picture source, Picture target, int num1, int nu
     
     //loop thru jcolumns (targetX is the starting point on the Canvas) sourceX+=2 - smaller copy every other pixel
                     //                                                  sourceX +=.5 - larger, copy every pixel twice cast as int in the getPixel & setColor
-    for (int sourceX = 0,targetX = num1; sourceX < source.getWidth()/2;sourceX++,targetX++){
+    for (int sourceX = 0,targetX = num1; sourceX < source.getWidth();sourceX++,targetX++){
         //loop thru the rows                                sourceY+=2 - smaller
         //                                                  sourceX +=.5 - larger, copy every pixel twice 
-        for (int sourceY = 0,targetY = num2; sourceY < source.getHeight()/2;sourceY++,targetY++){
+        for (int sourceY = 0,targetY = num2; sourceY < source.getHeight();sourceY++,targetY++){
             sourcePix = source.getPixel(sourceX, sourceY);
             targetPix = target.getPixel(targetX, targetY);
             targetPix.setColor(sourcePix.getColor());
@@ -165,19 +167,17 @@ public static void shrink(Picture source, Picture target, int num1, int num2){
     //loop thru jcolumns (targetX is the starting point on the Canvas) sourceX+=2 - smaller copy every other pixel
                     //                                                  sourceX +=.5 - larger, copy every pixel twice cast as int in the getPixel & setColor
     if (source.getWidth()>100&&source.getHeight()>100){
-    for (double sourceX = 0,targetX = num1; sourceX < source.getWidth();sourceX+=2,targetX++){
+    for (double sourceX = 0,targetX = num1/2; sourceX < source.getWidth();sourceX+=2,targetX++){
         //loop thru the rows                                sourceY+=2 - smaller
         //                                                  sourceX +=.5 - larger, copy every pixel twice 
-        for (double sourceY = 0,targetY = num2; sourceY < source.getHeight();sourceY+=2,targetY++){
-            System.out.println(sourceX + " " + targetX);
-            System.out.println(sourceY + " " + targetY);
+        for (double sourceY = 0,targetY = num2/2; sourceY < source.getHeight();sourceY+=2,targetY++){
             sourcePix = source.getPixel((int)sourceX, (int)sourceY);
             targetPix = target.getPixel((int)targetX, (int)targetY);
             targetPix.setColor(sourcePix.getColor());
         
         }
     }
-    shrink(source, target, (int)source.getWidth()/2, (int)source.getHeight()/2);
+    //shrink(source, target, (int)source.getWidth()/2, (int)source.getHeight()/2);
 }
 }
 
@@ -210,9 +210,7 @@ public static void mirrorVertical2(Picture source){
             rightPixel.setColor(leftPixel.getColor());
         }
     }
-    
-    
-    
+
 }
 }
 
